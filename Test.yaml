@@ -1,2 +1,58 @@
-# EDITS_ITF_Metadata Test
-To fill
+# EDITS ITF Metadata for the global urban passenger model.
+format: 1
+
+title: ITF Global urban passenge rmodel test
+description: |-
+  This is an example of exogenous data input for the ITF Global Urban Passenger model.
+provider:
+  organisation: International Transport Forum (ITF)
+  contact: mallory.trouve@itf-oecd.org
+
+# Don't worry about these for now. EDITS will define a larger set to capture
+# other attributes of entire data sets.
+classifiers:
+- "Kind :: Model input"
+- "Availability :: Public"
+- "Availability :: Proprietary"
+- "Availability :: Collaborators only"
+
+dimension:
+  time:
+    scope: 2015-2050
+    resolution: 5-year step
+    description: Five year steps from 2015 to 2050 assumed to go from January 1st to December 31st.
+  space:
+    scope: global
+    resolution: 19 world regions [market], 187 countries [countr_code], 8971 macro Functional Urban Areas [city_name]
+    description: >-
+      Markets defined at the ITF to keep homogenous socioeconomic and transport country caracteristics.
+      Countries as defined by ISO3 codes.
+      Functional Urban Areas (FUAs) defined bye the OECD-European Commission Cities in the World project, aggregated and completed with UN World Urbanization Prospects cities over 300 000 inhabitants when missing.
+  transport modes:
+    scope: 18 transport modes
+    resolution: walk, bike, motorcycle, car, taxi, rail, metro, lrt, bus, brt, informal bus, three wheeler, scooter sharing, bike sharing, ride sharing, motorcycle sharing, car sharing, taxibus
+    description: >-
+      Transport modes
+  population:
+    scope: 10 population categories
+    resolution: 2 gender categories, 5 age categories
+    desription: >-
+      The 10 population categories are a combination of the 2 gender categories (female - 0 and male - 1), and 5 age categories (0-19, 20-34, 35-54, 55-69, 70+)
+  trip distance:
+    scope: 6 distance categories
+    resolution: under 1km, 1-2.5km, 2.5-5km, 5-10km, 10-20km, over 20km
+    desription: >-
+      The 6 trip distance categories are each eassigned an average trip distance and the availability of a mode can be adjusted to it.
+
+measure:
+  material production:
+    description: >-
+      Material mass produced in a certain country and year.
+  end-use split:
+    description: >-
+      A ratio/transfer coefficient that determines which share of material production ends up in a certain end-use.
+  average lifetime:
+    description: >-
+      The average lifetime of a certain end-use (product group) depicting the average time which a material stays in use.
+      Can be used in different probability distributions to model the probability of materials flowing out of use.
+  
