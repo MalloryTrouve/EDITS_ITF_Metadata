@@ -16,6 +16,7 @@ classifiers:
 - "Availability :: Proprietary"
 - "Availability :: Collaborators only"
 
+# List of data dimensions
 dimension:
   time:
     scope: 2015-2050
@@ -43,16 +44,24 @@ dimension:
     resolution: under 1km, 1-2.5km, 2.5-5km, 5-10km, 10-20km, over 20km
     desription: >-
       The 6 trip distance categories are each eassigned an average trip distance and the availability of a mode can be adjusted to it.
+  trip type:
+    scope: 2 trip categories
+    resolution: resident, tourist
+    desription: >-
+      Resident trips are trips made by people living in the urban area, while tourist trips are trips made by people visiting the urban area, and not living in it.
 
+# List of data measures
 measure:
-  material production:
+  passenger travel demand:
     description: >-
-      Material mass produced in a certain country and year.
-  end-use split:
+      Resident and tourist passenger  transport  activity,  systematized  as  the  total  dis-tance  travelled  by  all  people  from  a functionnal urban area, by trip distance category (6), by mode(18), by age category (5), by gender(2), in the city centre vs the suburbs.
+    unit of measurement: passenger-kilometre
+    dimensions: time, space, trip distance, transport mode, population, trip type
+ 
+
+# List of phenomenons represented in the model
+phenomenon:
+  shared mobility:
     description: >-
-      A ratio/transfer coefficient that determines which share of material production ends up in a certain end-use.
-  average lifetime:
-    description: >-
-      The average lifetime of a certain end-use (product group) depicting the average time which a material stays in use.
-      Can be used in different probability distributions to model the probability of materials flowing out of use.
-  
+      Penetration of services that explore the shared use of resources (e.g. vehicles) or services (e.g. ride) to increase the efficiency of mobility provision. This increase in efficiency can be dual in reducing the holding of stock resources of mobility underused (e.g. cars) or in improving the efficiency of the resources when travelling (e.g. share rides and increase load factors). The concept explores the spectrum between private and public transport in terms of service provision and environmental and operational efficiency.
+    quantity: passenger travel demand, vehicle travel demand, vehicle fleet
