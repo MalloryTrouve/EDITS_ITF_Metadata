@@ -1,7 +1,9 @@
 # EDITS ITF Metadata for the global urban passenger model.
 format: 1
 
-title: ITF Global urban passenge rmodel test
+
+
+title: ITF Global urban passenger model test
 description: |-
   This is an example of exogenous data input for the ITF Global Urban Passenger model.
 provider:
